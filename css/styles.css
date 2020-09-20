@@ -44,7 +44,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 40px;
+    padding: 14px;
     position:relative;
     z-index: 30;
 }
@@ -74,8 +74,6 @@ header #btn-menu.close{
     width: 30px;
 }
 
-
-
 .row{
     display: flex;
     flex-wrap: wrap;
@@ -87,17 +85,14 @@ header #btn-menu.close{
 }
 
 .col{
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    flex: 1;
-    padding: 20px;
+    padding: 14px;
 }
 
 .col h3,
-.col p{
+.col p,
+.col a{
     font-family: "Arial";
-    font-size: 20px;
+    font-size: 18px;
     color: #ffffff;
 }
 
@@ -109,8 +104,8 @@ header #btn-menu.close{
     padding:0;
 }
 
-.row.content .col.col-medium{
-    padding: 0px 20px;
+.desk-show{
+    display: none!important;
 }
 
 /* About */
@@ -121,7 +116,6 @@ header #btn-menu.close{
     transition: ease-in 0.5s;
     left: 0;
     width: 100%;
-    height: 100vh;
     background-color: #000;
     z-index: 20;
 }
@@ -130,12 +124,30 @@ header #btn-menu.close{
     display: block;
 }
 
+#about .mt-120{
+    margin-top: 140px;
+}
+
 #about .show-f{
     display: flex;
 }
 
 #about > div {
     display: none;
+}
+
+#about a{
+    color: #fff;
+    outline: none;
+    text-decoration: none;
+    display: block;
+}
+
+#about .contact .request-pdf{
+    margin-top: 30px;
+}
+#about .contact .request-pdf > p{
+    margin-top: 18px;
 }
 
 /* Gallery */
@@ -149,18 +161,24 @@ header #btn-menu.close{
     background-color: #000;
     z-index: 10;
 }
+
 .owl-carousel img.owl-lazy{
     display: block;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
 }
+
+.owl-carousel img.owl-lazy.img-desk{
+    display: none;
+}
+
 .owl-nav{
     display: flex;
     justify-content: space-between;
     position: absolute;
     margin-top: -26px;
-    padding: 0px 40px;
+    padding: 0px 0px;
     top: 50%;
     left: 0;
     width: 100%;
@@ -173,7 +191,7 @@ header #btn-menu.close{
 .owl-nav button.disabled{
     opacity: 0.4;
 }
-
+/* 
 .owl-nav button .btn-left{
     background: url(../img/arrow-left.png);
     background-size: 100%;   
@@ -190,6 +208,23 @@ header #btn-menu.close{
     opacity: 0;
     width: 26px;
     transition: ease-in 0.5s;
+} */
+.owl-nav button .btn-left{
+    background: url(../img/arrow-left-2.png);
+    background-size: 100%;   
+    height: 55px;
+    opacity: 0;
+    transition: ease-in 0.5s;
+    width: 42px;
+}
+
+.owl-nav button .btn-right{
+    background: url(../img/arrow-right-2.png);
+    background-size: 100%;
+    height: 55px;
+    opacity: 0;
+    width: 42px;
+    transition: ease-in 0.5s;
 }
 
 .owl-nav button .btn-left.show-btn{
@@ -200,12 +235,109 @@ header #btn-menu.close{
     opacity: 1;
 }
 
-@media (min-width: 768px) {
 
+
+@media (min-width: 768px) {
+    .col{
+        flex: 1;
+    }
+    .owl-carousel img.owl-lazy.img-desk{
+        display: block;
+    }
+    .owl-carousel img.owl-lazy.img-mb{
+        display: none;
+    }
+    
+    /* .row.content .col.col-medium{
+        padding: 0px 20px;
+    }
+    #about .row.contact .col-medium{
+        padding: 0px;
+    } */
+    #about .contact .data{
+        flex-basis: 1;
+    }
+
+    #about .contact .request-pdf{
+        flex-basis: 100%;
+    }
 }
 
 @media (min-width: 992px) {
     .mr{
         margin-right: 180px;
+    }
+    .col{
+        padding: 0px 40px;
+    }
+    .mb-show{
+        display: none!important;
+    }
+    .desk-show{
+        display: block!important;
+    }
+    /* HEADER */
+    header{
+        padding: 40px;
+    }
+    /* ABOUT */
+    #about{
+        height: 100vh;
+    }
+    #about .contact{
+        flex-direction: row;
+    }
+    #about .contact .request-pdf{
+        flex-basis: 40%;
+    }
+    #about .contact .data{
+        flex-basis: initial;
+    }
+    #about .contact .request-pdf,
+    #about .contact .request-pdf > p{
+        margin-top: 0px;
+    }
+    /* GALLERY */
+    .owl-nav{
+        padding: 0px 30px;
+    }
+}
+@media (min-width: 992px) {
+    .mr{
+        margin-right: 180px;
+    }
+    .col{
+        padding: 0px 40px;
+    }
+    .mb-show{
+        display: none!important;
+    }
+    .desk-show{
+        display: block!important;
+    }
+    /* HEADER */
+    header{
+        padding: 40px;
+    }
+    /* ABOUT */
+    #about{
+        height: 100vh;
+    }
+    #about .contact{
+        flex-direction: row;
+    }
+    #about .contact .request-pdf{
+        flex-basis: 40%;
+    }
+    #about .contact .data{
+        flex-basis: initial;
+    }
+    #about .contact .request-pdf,
+    #about .contact .request-pdf > p{
+        margin-top: 0px;
+    }
+    /* GALLERY */
+    .owl-nav{
+        padding: 0px 30px;
     }
 }
