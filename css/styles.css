@@ -235,6 +235,26 @@ header #btn-menu.close{
     opacity: 1;
 }
 
+.projects{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    z-index: 10;
+}
+
+.project-desc {
+    display: none;
+}
+
+.project-desc.active {
+    display: block;
+}
+
+.project-desc p{
+    font-family: "Arial";
+    font-size: 18px;
+    color: #ffffff;
+}
 
 
 @media (min-width: 768px) {

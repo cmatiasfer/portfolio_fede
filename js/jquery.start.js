@@ -63,7 +63,11 @@ $(document).ready(function () {
     });
   }, 500);
 
-  $(".owl-carousel").owlCarousel({
+
+
+
+
+  var owl = $(".owl-carousel").owlCarousel({
     animateIn: 'fadeIn',
     animateOut: 'fadeOut',
     autoplay: false,
@@ -74,5 +78,20 @@ $(document).ready(function () {
     loop: true,
     nav: true,
     navText: ["<div class='btn-left'></div>", "<div class='btn-right'></div>"],
+    callbacks: true
   });
+
+
+
+
+  owl.on('translate.owl.carousel', function (event) {
+    var current = event.item.index;
+    var idProject = $(event.target).find(".owl-item").eq(current).find('.item').attr("data-id");
+
+  });
+  /* owl.on('translated.owl.carousel', function (event) {
+    var current = event.item.index;
+    var src = $(event.target).find(".owl-item").eq(current).attr('class');
+    console.log('Image current termino is ' + src);
+  }); */
 });
